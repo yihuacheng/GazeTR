@@ -1,7 +1,7 @@
 # GazeTR
 We are sorting out the codes and models.
 
-We will release them in june 06.
+We will release them before june 06.
 
 ## Links to gaze estimation codes.
 
