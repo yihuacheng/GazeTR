@@ -7,6 +7,11 @@ You can direct run the method' code using the processed dataset.
 
 <div align=center> <img src="src/overview.png"> </div>
 
+## Requirements
+We build the project with `pytorch1.7.0`.
+
+The `warmup` is used following <a href="http://phi-ai.org/GazeHub/" target="_blank">https://github.com/ildoonet/pytorch-gradual-warmup-lr</a>.
+
 ## Usage
 ### Directly use our code.
 
