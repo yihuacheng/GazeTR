@@ -1,29 +1,55 @@
 # GazeTR
-We provide the code of GazeTR-Hybrid in "Gaze Estimation using Transformer".
 
+We provide the code of GazeTR-Hybrid in "**Gaze Estimation using Transformer**".
 We recommend you to use **data processing codes** provided in <a href="http://phi-ai.org/GazeHub/" target="_blank">*GazeHub*</a>.
 You can direct run the method' code using the processed dataset.
 
+![overview](src/overview.png)
+
 ## Usage
 ### Directly use our code.
+
+You should perform three steps to run our codes.
+
 1. Prepare the data using our provided data processing codes.
-2. Modify the `config/train/config_xx.yaml`.
-3. To perform leave-one-person-out evaluation, you can run
-`python trainer/leave.py -s config/train/config_xx.yaml -p 0`
-Note that, this code only perform training in the 0th person. You should modify the parameter of `-p` and repeat it.
-4. To perform training-test evaluation, you can run
-`python trainer/total.py -s config/train/config_xx.yaml`
+
+2. Modify the `config/train/config_xx.yaml` and `config/test/config_xx.yaml`.
+
+3. Run the commands.
+
+To perform leave-one-person-out evaluation, you can run
+
+```
+python trainer/leave.py -s config/train/config_xx.yaml -p 0
+```
+Note that, this command only performs training in the `0th` person. You should modify the parameter of `-p` and repeat it.
+
+To perform training-test evaluation, you can run
+
+```
+python trainer/total.py -s config/train/config_xx.yaml    
+```
+
+To test your model, you can run
+```
+python trainer/leave.py -s config/train/config_xx.yaml -t config/test/config_xx.yaml -p 0
+```
+or
+```
+python trainer/total.py -s config/train/config_xx.yaml -t config/test/config_xx.yaml
+```
 
 ### Build your own project.
 You can import the model in `model.py` for your own project.
-We give an example.
+
+We give an example. Note that, the `line 114` in `model.py` uses `.cuda()`. You should remove it if you run the model in CPU.
 ```
 from model import Model
 GazeTR = Model()
 
-img = torch.ones(10, 3, 224 ,224)
+img = torch.ones(10, 3, 224 ,224).cuda()
 img = {'face': img}
-label = torch.ones(10, 2)
+label = torch.ones(10, 2).cuda()
 
 # for training
 loss = GazeTR(img, label)
@@ -33,8 +59,13 @@ gaze = GazeTR(img)
 ```
 
 ## Pre-trained model
-You can download from <a href="http://phi-ai.org/GazeHub/Codes/GazeTR-H-ETH.pt" download="GazeTR-Hybrid-ETH.pt"> here </a>.
+You can download from <a href="https://drive.google.com/file/d/1WEiKZ8Ga0foNmxM7xFabI4D5ajThWAWj/view?usp=sharing" target="_blank"> google drive </a> or <a href="https://pan.baidu.com/s/1GEbjbNgXvVkisVWGtTJm7g" target="_blank"> baidu cloud disk </a> with code `1234`. 
+  
 This is the pre-trained model in ETH-XGaze dataset with 50 epochs and 512 batch sizes. 
+
+## Performance
+![ComparisonA](src/ComparisonA.png)
+![ComparisonB](src/ComparisonB.png)
 
 
 ## Links to gaze estimation codes.
