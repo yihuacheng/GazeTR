@@ -10,7 +10,7 @@ You can direct run the method' code using the processed dataset.
 ## Requirements
 We build the project with `pytorch1.7.0`.
 
-The `warmup` is used following <a href="http://phi-ai.org/GazeHub/" target="_blank">https://github.com/ildoonet/pytorch-gradual-warmup-lr</a>.
+The `warmup` is used following <a href="https://github.com/ildoonet/pytorch-gradual-warmup-lr" target="_blank">here</a>.
 
 ## Usage
 ### Directly use our code.
