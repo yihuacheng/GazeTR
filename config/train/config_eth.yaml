@@ -1,0 +1,35 @@
+---
+train:
+
+    params:
+        batch_size: 512
+        epoch: 50
+        lr: 0.0005
+        decay: 0.5
+        decay_step: 10
+        warmup: 3
+
+    save:
+        metapath: "/userhome/share_hosts/work/Transformer/ComTrans/exp/Transformer-6layers"
+        folder: eth
+        model_name: trans6
+        step: 5
+
+    data:
+        image: "/userdata/ETH.zip/ETH-Gaze/Image/train"
+        label: "/userdata/ETH.zip/ETH-Gaze/Label/trainYP.label"
+        header: True
+        name: eth
+        isFolder: False
+
+    pretrain:
+        enable: False
+        path: PLACEHOLDER
+        device: PLACEHOLDER
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512

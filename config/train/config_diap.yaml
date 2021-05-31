@@ -1,0 +1,35 @@
+---
+train:
+
+    params:
+        batch_size: 16
+        epoch: 80
+        lr: 0.0005
+        decay: 0.5
+        decay_step: 60
+        warmup: 5
+
+    save:
+        metapath: "/userhome/share_hosts/work/Transformer/ComTrans/exp/Transformer-6layers"
+        folder: diap
+        model_name: trans6
+        step: 10
+
+    data:
+        image: "/userdata/Diap.zip/EyeDiap/Image"
+        label: "/userdata/Diap.zip/EyeDiap/ClusterLabel"
+        header: True
+        name: diap
+        isFolder: True
+        
+    pretrain:
+        enable: True
+        path: "/userhome/share_hosts/work/Transformer/ComTrans/exp/Transformer-6layers/eth/checkpoint/Iter_50_trans6.pt"
+        device: 0
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512

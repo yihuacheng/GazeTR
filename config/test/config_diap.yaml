@@ -1,0 +1,23 @@
+---
+test:
+
+    load:
+        begin_step: 10
+        end_step: 80
+        steps: 10
+
+    data: 
+        image: "/userdata/Diap.zip/EyeDiap/Image"
+        label: "/userdata/Diap.zip/EyeDiap/ClusterLabel"
+        name: diap
+        header: True
+        isFolder: True
+
+    savename: "evaluation"
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512

@@ -1,0 +1,35 @@
+---
+train:
+
+    params:
+        batch_size: 256
+        epoch: 80
+        lr: 0.0005
+        decay: 0.5
+        decay_step: 60
+        warmup: 5
+
+    save:
+        metapath: "/userhome/share_hosts/work/Transformer/ComTrans/exp/Transformer-6layers"
+        folder: gaze360
+        model_name: trans6
+        step: 10
+
+    data:
+        image: "/userdata/360.zip/Gaze360/Image"
+        label: "/userdata/360.zip/Gaze360/Label/train.label"
+        header: True
+        name: gaze360
+        isFolder: False
+        
+    pretrain:
+        enable: True
+        path: "/userhome/share_hosts/work/Transformer/ComTrans/exp/Transformer-6layers/eth/checkpoint/Iter_50_trans6.pt"
+        device: 0
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512

@@ -1,0 +1,23 @@
+---
+test:
+
+    load:
+        begin_step: 10
+        end_step: 80
+        steps: 10
+
+    data: 
+        image: "/userdata/360.zip/Gaze360/Image"
+        label: "/userdata/360.zip/Gaze360/Label/test.label"
+        name: gaze360
+        header: True
+        isFolder: False
+
+    savename: "evaluation"
+
+    device: 0
+
+    reader: reader
+
+# dropout = 0
+# dim_feed = 512
