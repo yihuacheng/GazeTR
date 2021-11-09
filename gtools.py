@@ -15,4 +15,24 @@ def angular(gaze, label):
   total = np.sum(gaze * label)
   return np.arccos(min(total/(np.linalg.norm(gaze)* np.linalg.norm(label)), 0.9999999))*180/np.pi
 
-    
+def CropImg(img, X, Y, W, H):
+    """
+    X, Y is the corrdinate of the left-top corner of images. 
+    W, H is weight and high.
+    """
+
+    Y_lim, X_lim  = img.shape[0], img.shape[1]
+    H =  min(H, Y_lim)
+    W = min(W, X_lim)
+
+    X, Y, W, H = list(map(int, [X, Y, W, H]))
+    X = max(X, 0)
+    Y = max(Y, 0)
+
+    if X + W > X_lim:
+        X = X_lim - W
+
+    if Y + H > Y_lim:
+        Y = Y_lim - H
+
+    return img[Y:(Y+H),X:(X+W)]
