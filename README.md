@@ -1,6 +1,6 @@
 # GazeTR
 
-We provide the code of GazeTR-Hybrid in "**Gaze Estimation using Transformer**".
+We provide the code of GazeTR-Hybrid in "**Gaze Estimation using Transformer**". This work is accepted by ICPR2022.
 
 We recommend you to use **data processing codes** provided in <a href="http://phi-ai.org/GazeHub/" target="_blank">*GazeHub*</a>.
 You can direct run the method' code using the processed dataset.
@@ -74,6 +74,15 @@ This is the pre-trained model in ETH-XGaze dataset with 50 epochs and 512 batch 
 
 ![ComparisonB](src/ComparisonB.png)
 
+## Citation
+```
+@InProceedings{cheng2022gazetr,
+  title={Gaze Estimation using Transformer},
+  author={Yihua Cheng and Feng Lu},
+  journal={International Conference on Pattern Recognition (ICPR)},
+  year={2022}
+}
+```
 
 ## Links to gaze estimation codes.
 
