@@ -5,6 +5,8 @@ We provide the code of GazeTR-Hybrid in "**Gaze Estimation using Transformer**".
 We recommend you to use **data processing codes** provided in <a href="http://phi-ai.org/GazeHub/" target="_blank">*GazeHub*</a>.
 You can direct run the method' code using the processed dataset.
 
+*Note: Some people find that the code cannot be opened in their browser. Please directly download it and rename it as `xx.py`. In fact, the download step will be automatically processed, but the browser may cause this issue.*
+
 <div align=center> <img src="src/overview.png"> </div>
 
 ## Requirements
